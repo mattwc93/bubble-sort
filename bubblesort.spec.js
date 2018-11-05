@@ -34,5 +34,12 @@ describe('Bubble Sort', function(){
     expect(window.compare.calls.count()).toEqual(3);
   });
 
+  it('can take a comparator function', function () {
+    const comparator = (x, y) => {
+      return y - x;
+    };
+    expect(bubbleSort(unsortedExOne, comparator)).toEqual(sortedExOne.reverse());
+  });
+
 });
 
